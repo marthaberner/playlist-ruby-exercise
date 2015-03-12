@@ -53,4 +53,16 @@ class Playlist
     playlist[0].playing = true
   end
 
+  def next
+    if now_playing
+      current_song_index = playlist.index(now_playing)
+      now_playing.playing = false
+      next_song_index = current_song_index + 1
+      current_song = playlist[next_song_index]
+      if current_song != nil
+        current_song.playing = true
+      end
+    end
+  end
+
 end

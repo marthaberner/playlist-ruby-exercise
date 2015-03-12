@@ -106,22 +106,22 @@ RSpec.describe Playlist do
 
     expect(playlist.now_playing).to eq(it_had_to_be_you);
   end
-  #
-  # it "allows you go to the next song" do
-  #   playlist = Playlist.new
-  #   playlist.add_song(it_had_to_be_you)
-  #   playlist.add_song(but_not_for_me)
-  #   playlist.add_song(autumn_in_new_york)
-  #
-  #   playlist.play
-  #   playlist.next
-  #   expect(playlist.now_playing).to eq(but_not_for_me)
-  #
-  #   playlist.next
-  #   expect(playlist.now_playing).to eq(autumn_in_new_york)
-  #
-  #   playlist.next
-  #   expect(playlist.now_playing).to eq(nil)
-  # end
+  
+  it "allows you go to the next song" do
+    playlist = Playlist.new
+    playlist.add_song(it_had_to_be_you)
+    playlist.add_song(but_not_for_me)
+    playlist.add_song(autumn_in_new_york)
+
+    playlist.play
+    playlist.next
+    expect(playlist.now_playing).to eq(but_not_for_me)
+
+    playlist.next
+    expect(playlist.now_playing).to eq(autumn_in_new_york)
+
+    playlist.next
+    expect(playlist.now_playing).to eq(nil)
+  end
 
 end
