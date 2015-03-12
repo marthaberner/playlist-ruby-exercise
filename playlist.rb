@@ -21,7 +21,6 @@ class Playlist
 
   def remove_song(song)
     playlist.delete(song)
-    playlist
   end
 
   def total_length
