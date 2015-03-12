@@ -24,4 +24,12 @@ class Playlist
     playlist
   end
 
+  def total_length
+    result = 0
+    playlist.each do |song|
+      result += song.length
+    end
+    result
+  end
+
 end
