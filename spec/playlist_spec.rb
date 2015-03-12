@@ -14,12 +14,12 @@ RSpec.describe Playlist do
     expect(playlist.empty?).to eq(true)
   end
 
-  # it "allows you to add a song" do
-  #   playlist = Playlist.new
-  #   playlist.add_song(it_had_to_be_you)
-  #
-  #   expect(playlist.empty?).to eq(false)
-  # end
+  it "allows you to add a song" do
+    playlist = Playlist.new
+    playlist.add_song(it_had_to_be_you)
+
+    expect(playlist.empty?).to eq(false)
+  end
   #
   # it "allows you to see all song names in the order they were added" do
   #   playlist = Playlist.new
