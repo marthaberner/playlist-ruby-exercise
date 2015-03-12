@@ -39,4 +39,18 @@ class Playlist
     playlist[song_2_index] = song_1
   end
 
+  def now_playing
+    result = nil
+    playlist.each do |song|
+      if song.playing == true
+        result = song
+      end
+    end
+    result
+  end
+
+  def play
+    playlist[0].playing = true
+  end
+
 end
