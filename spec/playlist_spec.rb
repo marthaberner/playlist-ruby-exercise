@@ -106,7 +106,7 @@ RSpec.describe Playlist do
 
     expect(playlist.now_playing).to eq(it_had_to_be_you);
   end
-  
+
   it "allows you go to the next song" do
     playlist = Playlist.new
     playlist.add_song(it_had_to_be_you)

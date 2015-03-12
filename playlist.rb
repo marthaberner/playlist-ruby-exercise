@@ -1,12 +1,13 @@
 class Playlist
-  attr_accessor :playlist
+  attr_accessor :playlist, :now_playing
 
   def initialize(playlist = [])
     @playlist = playlist
+    @now_playing = nil
   end
 
   def empty?
-    playlist.length == 0
+    playlist.empty?
   end
 
   def add_song(song)
@@ -14,9 +15,7 @@ class Playlist
   end
 
   def song_names
-    playlist.map do |song|
-      song.title
-    end
+    playlist.map { |song| song.title }
   end
 
   def remove_song(song)
@@ -24,11 +23,7 @@ class Playlist
   end
 
   def total_length
-    result = 0
-    playlist.each do |song|
-      result += song.length
-    end
-    result
+    playlist.inject(0) {|memo, song| memo + song.length }
   end
 
   def swap(song_1, song_2)
@@ -38,30 +33,15 @@ class Playlist
     playlist[song_2_index] = song_1
   end
 
-  def now_playing
-    result = nil
-    playlist.each do |song|
-      if song.playing == true
-        result = song
-      end
-    end
-    result
-  end
-
   def play
-    playlist[0].playing = true
+    self.now_playing = playlist.first
   end
 
   def next
-    if now_playing
       current_song_index = playlist.index(now_playing)
-      now_playing.playing = false
       next_song_index = current_song_index + 1
       current_song = playlist[next_song_index]
-      if current_song != nil
-        current_song.playing = true
-      end
-    end
+      self.now_playing = current_song
   end
 
 end
