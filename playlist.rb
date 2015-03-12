@@ -19,4 +19,9 @@ class Playlist
     end
   end
 
+  def remove_song(song)
+    playlist.delete(song)
+    playlist
+  end
+
 end
