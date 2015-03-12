@@ -32,4 +32,11 @@ class Playlist
     result
   end
 
+  def swap(song_1, song_2)
+    song_1_index = playlist.index(song_1)
+    song_2_index = playlist.index(song_2)
+    playlist[song_1_index] = song_2
+    playlist[song_2_index] = song_1
+  end
+
 end

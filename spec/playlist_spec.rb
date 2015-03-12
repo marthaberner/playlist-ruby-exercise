@@ -71,28 +71,28 @@ RSpec.describe Playlist do
     playlist.add_song(autumn_in_new_york)
     expect(playlist.total_length).to eq(175)
   end
-  #
-  # it("allows you to swap songs") do
-  #   playlist = Playlist.new
-  #
-  #   playlist.add_song(it_had_to_be_you)
-  #   playlist.add_song(but_not_for_me)
-  #   playlist.add_song(autumn_in_new_york)
-  #
-  #   playlist.swap(it_had_to_be_you, but_not_for_me)
-  #   expect(playlist.song_names).to eq([
-  #     'But Not for Me',
-  #     'It had to be you',
-  #     'Autumn In New York'
-  #   ])
-  #
-  #   playlist.swap(it_had_to_be_you, autumn_in_new_york)
-  #   expect(playlist.song_names).to eq([
-  #     'But Not for Me',
-  #     'Autumn In New York',
-  #     'It had to be you'
-  #   ])
-  # end
+  
+  it("allows you to swap songs") do
+    playlist = Playlist.new
+
+    playlist.add_song(it_had_to_be_you)
+    playlist.add_song(but_not_for_me)
+    playlist.add_song(autumn_in_new_york)
+
+    playlist.swap(it_had_to_be_you, but_not_for_me)
+    expect(playlist.song_names).to eq([
+      'But Not for Me',
+      'It had to be you',
+      'Autumn In New York'
+    ])
+
+    playlist.swap(it_had_to_be_you, autumn_in_new_york)
+    expect(playlist.song_names).to eq([
+      'But Not for Me',
+      'Autumn In New York',
+      'It had to be you'
+    ])
+  end
   #
   # it "allows you to play a song"  do
   #   playlist = Playlist.new
