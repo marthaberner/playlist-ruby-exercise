@@ -13,4 +13,10 @@ class Playlist
     playlist << song
   end
 
+  def song_names
+    playlist.map do |song|
+      song.title
+    end
+  end
+
 end

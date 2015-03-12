@@ -20,21 +20,21 @@ RSpec.describe Playlist do
 
     expect(playlist.empty?).to eq(false)
   end
-  #
-  # it "allows you to see all song names in the order they were added" do
-  #   playlist = Playlist.new
-  #
-  #   expect(playlist.song_names).to eq([])
-  #
-  #   playlist.add_song(it_had_to_be_you)
-  #   expect(playlist.song_names).to eq(['It had to be you'])
-  #
-  #   playlist.add_song(but_not_for_me)
-  #    expect(playlist.song_names).to eq([
-  #     'It had to be you',
-  #     'But Not for Me'
-  #     ])
-  # end
+
+  it "allows you to see all song names in the order they were added" do
+    playlist = Playlist.new
+
+    expect(playlist.song_names).to eq([])
+
+    playlist.add_song(it_had_to_be_you)
+    expect(playlist.song_names).to eq(['It had to be you'])
+
+    playlist.add_song(but_not_for_me)
+     expect(playlist.song_names).to eq([
+      'It had to be you',
+      'But Not for Me'
+      ])
+  end
   #
   # it "allows you remove a song from the playlist" do
   #   playlist = Playlist.new
